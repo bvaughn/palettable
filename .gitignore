@@ -1,0 +1,12 @@
+.DS_Store
+/.bower
+/.sass-cache
+/.tmp
+/bower_components
+/dist
+/node_modules
+/target
+/test-reports
+/tmp
+/coverage
+/npm-debug.log

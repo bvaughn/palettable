@@ -1,0 +1,9 @@
+$scss-not-a-color: 10px;
+$scss-red-5: #cc0000;
+
+p {
+  $scss-red-6: #f00;
+  $scss-reference-color: $teal;
+  border-color: #F00;
+  font-color: #A00;
+}

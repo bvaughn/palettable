@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>Color Palette</title>
+  <style type="text/css">
+    * {
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+    h1 {
+      text-align: center;
+    }
+    .swatches {
+      text-align: center;
+    }
+    .swatch {
+      display: inline-block;
+      width: 200px;
+      text-align: center;
+      color: #FFF;
+      margin: 5px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .swatch .fileName,
+    .swatch .name,
+    .swatch .value {
+      line-height: 30px;
+      text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+    .swatch .name {
+      font-weight: bold;
+    }
+    .swatch .value {
+      line-height: 50px;
+      font-size: 20px;
+    }
+    .swatch .hover-swatch,
+    .swatch .shade-swatch,
+    .swatch .tint-swatch {
+      width: 33.3333%;
+      float: left;
+      line-height: 60px;
+      text-transform: uppercase;
+      font-size: 9px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Color Palette</h1>
+
+<div class="swatches">
+  <%= swatchesHtml %>
+</div>
+
+</body>
+</html>
