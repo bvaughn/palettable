@@ -1,7 +1,7 @@
 {
   "name": "palettable",
   "version": "1.0.0",
-  "description": "Generate HTML color palette from SCSS source code.",
+  "description": "Generate HTML color palettes from either SASS, SCSS, or Stylus stylesheets.",
   "repository": "",
   "author": {
     "name": "Brian Vaughn",
