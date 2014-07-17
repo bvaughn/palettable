@@ -1,15 +1,22 @@
 {
   "name": "palettable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate HTML color palettes from either SASS, SCSS, or Stylus stylesheets.",
-  "repository": "",
+  "repository": "https://github.com/bvaughn/palettable",
   "author": {
     "name": "Brian Vaughn",
     "email": "brian.david.vaughn@gmail.com",
     "url": "http://www.briandavidvaughn.com"
   },
   "keywords": [
-    "gruntplugin"
+    "grunt",
+    "gruntplugin",
+    "color",
+    "palette",
+    "tinycolor",
+    "sass",
+    "scss",
+    "stylus"
   ],
   "main": "Gruntfile.js",
   "engines": {

@@ -9,7 +9,6 @@
 'use strict';
 
 module.exports = function (grunt) {
-  // load all npm grunt tasks
   require('load-grunt-tasks')(grunt);
 
   // Project configuration.

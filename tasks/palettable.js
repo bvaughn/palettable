@@ -8,9 +8,7 @@
 'use strict';
 module.exports = function(grunt) {
   grunt.registerTask('palettable', 'Generate HTML color palette from SCSS source code.', function() {
-    var tinycolor = require('../node_modules/tinycolor2/tinycolor'); // TODO Can we load this in a better way?
-    global.tinycolor = tinycolor;
-
+    var tinycolor = require('tinycolor2');
     var palettable = require(__dirname + '/../lib/palettable');
 
     // Add a couple of convenience methods to Tiny Object instances.
