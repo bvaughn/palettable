@@ -5,13 +5,13 @@
 So that these...
 
 ```js
-// scss.scss
+// app/css/scss.scss
 $red: #e35256;
 
-// sass.sass
+// app/css/sass.sass
 green: rgb(141, 181, 23)
 
-// stylus.styl
+// app/css/stylus.styl
 blue = #0073bA
 ```
 
@@ -43,8 +43,7 @@ This plugin also makes use of the [TinyColor JavaScript library](https://github.
 
 ## Overview
 
-In your project's Gruntfile, add a section named `palettable` to the data object passed into `grunt.initConfig()`.
-This example illustrates the minimal configuration:
+In your project's Gruntfile, add a section named `palettable` to the data object passed into `grunt.initConfig()`. Although Palettable does not *require* any configuration settings it is recommended to specify the location of your project's stylesheets as follows:
 
 ```js
 grunt.initConfig({
@@ -80,7 +79,8 @@ With rgba() variables the alpha channel is also ignored.
 ## Configuration Options
 
 #### stylesDirectory
-Type: `String`
+Type: `String`;
+Default `.`
 
 This is the base directory for all of your SASS/SCSS files. Grunt will recurse this directory looking for color variables.
 
@@ -152,7 +152,7 @@ function hoverColor( color ) {
 
 For more infomration on JavaScript sorting refer to the [w3 schools documentation](http://www.w3schools.com/jsref/jsref_sort.asp).
 
-#### openBrowserOnComplete
+#### openInBrowser
 Type: `Boolean`;
 Defaults to false
 

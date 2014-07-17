@@ -24,8 +24,9 @@ module.exports = function(grunt) {
     // Merge configuration with default settings.
     var options = this.options({
       colorSortFunction: palettable.defaultColorSortWeightFunction,
-      openBrowserOnComplete: false,
+      openInBrowser: false,
       outputFilePath: 'color-palette.html',
+      stylesDirectory: '.',
       templateLayoutPath: __dirname + '/../templates/layout.html',
       templateSwatchPath: __dirname + '/../templates/swatch.html',
       hoverColorFunction: function( color ) {
@@ -109,7 +110,7 @@ module.exports = function(grunt) {
 
     grunt.file.write(options.outputFilePath, html);
 
-    if (options.openBrowserOnComplete) {
+    if (options.openInBrowser) {
       require('open')(options.outputFilePath);
     }
   });
