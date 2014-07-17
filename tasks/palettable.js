@@ -29,29 +29,19 @@ module.exports = function(grunt) {
       stylesDirectory: '.',
       templateLayoutPath: __dirname + '/../templates/layout.html',
       templateSwatchPath: __dirname + '/../templates/swatch.html',
-      hoverColorFunction: function( color ) {
-        return color.clone().brighten(10);
-      },
-      tintColorFunction: function( color ) {
-        return tinycolor({
-          h: color.toHsv().h,
-          s: 10,
-          v: 99
-        });
-      },
-      shadeColorFunction: function( color ) {
-        return color.clone().darken(15);
-      }
+      hoverColorFunction: palettable.defaultHoverColorFunction,
+      tintColorFunction: palettable.defaultTintColorFunction,
+      shadeColorFunction: palettable.defaultShadeColorFunction
     });
-
-    // All of our gathered color variables will be added to this collection.
-    var colors = [];
 
     if (!grunt.file.isDir(options.stylesDirectory)) {
       console.log('Invalid SCSS directory', options.stylesDirectory);
 
       return;
     }
+
+    // All of our gathered color variables will be added to this collection.
+    var colors = [];
 
     // Gather all $colors in our SCSS files
     grunt.file.expand({cwd: options.stylesDirectory}, '**/*.scss').
