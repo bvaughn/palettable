@@ -25,6 +25,7 @@ module.exports = function(grunt) {
       openInBrowser: false,
       outputFilePath: 'color-palette.html',
       stylesDirectory: '.',
+      excludedFiles: '/',
       templateLayoutPath: __dirname + '/../templates/layout.html',
       templateSwatchPath: __dirname + '/../templates/swatch.html',
       hoverColorFunction: palettable.defaultHoverColorFunction,
@@ -42,31 +43,31 @@ module.exports = function(grunt) {
     var colors = [];
 
     // Gather all $colors in our SCSS files
-    grunt.file.expand({cwd: options.stylesDirectory}, '**/*.scss').
-      forEach(function(file) {
-        palettable.parseSCSS(
-          grunt.file.read(options.stylesDirectory + '/' + file),
-          file,
-          colors);
-      });
+    grunt.file.expand({cwd: options.stylesDirectory}, '**/*.scss', '!' + options.excludedFiles).
+    forEach(function(file) {
+      palettable.parseSCSS(
+        grunt.file.read(options.stylesDirectory + '/' + file),
+        file,
+        colors);
+    });
 
     // Gather all $colors in our SCSS files
-    grunt.file.expand({cwd: options.stylesDirectory}, '**/*.sass').
-      forEach(function(file) {
-        palettable.parseSASS(
-          grunt.file.read(options.stylesDirectory + '/' + file),
-          file,
-          colors);
-      });
+    grunt.file.expand({cwd: options.stylesDirectory}, '**/*.sass', '!' + options.excludedFiles).
+    forEach(function(file) {
+      palettable.parseSASS(
+        grunt.file.read(options.stylesDirectory + '/' + file),
+        file,
+        colors);
+    });
 
     // Gather all $colors in our SCSS files
-    grunt.file.expand({cwd: options.stylesDirectory}, '**/*.styl').
-      forEach(function(file) {
-        palettable.parseStylus(
-          grunt.file.read(options.stylesDirectory + '/' + file),
-          file,
-          colors);
-      });
+    grunt.file.expand({cwd: options.stylesDirectory}, '**/*.styl', '!' + options.excludedFiles).
+    forEach(function(file) {
+      palettable.parseStylus(
+        grunt.file.read(options.stylesDirectory + '/' + file),
+        file,
+        colors);
+    });
 
     // Sort by hue
     colors = palettable.sortColors(colors, options.colorSortFunction);
