@@ -87,7 +87,7 @@ This is the base directory for all of your SASS/SCSS files. Grunt will recurse t
 
 #### excludedFiles
 Type: `String`;
-Default `/`
+Default `null`
 
 Here you can specify the file(s) you want to exclude from the process. Grunt will ignore those files.
 

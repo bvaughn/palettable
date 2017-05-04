@@ -34,6 +34,7 @@ module.exports = function (grunt) {
     palettable: {
       options: {
         outputFilePath: 'tmp/sanity-check.html',
+        excludedFiles: '**/kss.scss',
         stylesDirectory: 'test/fixtures/sanity-check',
         templateLayoutPath: 'test/templates/layout.html',
         templateSwatchPath: 'test/templates/swatch.html'
