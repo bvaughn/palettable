@@ -49,7 +49,8 @@ In your project's Gruntfile, add a section named `palettable` to the data object
 grunt.initConfig({
   palettable: {
     options: {
-      stylesDirectory: 'app/css/'
+      stylesDirectory: 'app/css/',
+      excludedFiles: '**/kss.scss'
       // Optional configuration options go here
     }
   }
@@ -83,6 +84,12 @@ Type: `String`;
 Default `.`
 
 This is the base directory for all of your SASS/SCSS files. Grunt will recurse this directory looking for color variables.
+
+#### excludedFiles
+Type: `String`;
+Default `null`
+
+Here you can specify the file(s) you want to exclude from the process. Grunt will ignore those files.
 
 #### outputFilePath
 Type: `String`;
@@ -196,6 +203,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
+2017-05-02   v1.1.0   Added a parameter to exclude specific file(s).
 2014-07-14   v1.0.0   Initial release. Full SASS and Stylus support.
 
 ## License
